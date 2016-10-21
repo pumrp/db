@@ -3,7 +3,7 @@ while (conn === undefined)
 {
     try
     {
-        conn = new Mongo("db.database.pumrp.marathon.mesos:27017");
+        conn = new Mongo("localhost:27017");
     }
     catch (e)
     {
