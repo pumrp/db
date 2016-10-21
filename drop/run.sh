@@ -1,8 +1,9 @@
 #!/bin/bash
 
-echo Starting Mongo Instance
+echo "******************* Starting Mongo Instance ********************"
 mongod --smallfiles --rest --fork --logpath /var/log/mongodb/server.log
-sleep 3
-echo Dumping Data
-mongo ordering /tmp/MongoRecords.js
+sleep 1
+echo "******************* Dumping Data ********************"
+mongo ordering /usr/local/app/MongoRecords.js
+echo "******************* Starting to log ********************"
 tail -f /var/log/mongodb/server.log
