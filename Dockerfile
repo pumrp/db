@@ -2,6 +2,10 @@ FROM mongo
 
 MAINTAINER juliens@microsoft.com
 
-COPY drop/* /tmp/
+RUN mkdir -p /usr/local/app
 
-CMD ["mongod", "--smallfiles", "--rest"]
+WORKDIR /usr/local/app
+
+COPY drop/* /usr/local/app/
+
+ENTRYPOINT sh run.sh
